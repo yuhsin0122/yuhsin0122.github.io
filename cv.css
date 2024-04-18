@@ -1,0 +1,605 @@
+*{
+  box-sizing:border-box;
+  font-family: 微軟正黑體;
+  color:#3E3D39;
+  display:flexbox;
+}
+
+body{
+  background-color: #D7CEB2;
+  margin:0px;
+  padding: auto;
+  padding-bottom: 2.5rem;
+}
+
+nav{
+  display: flex;
+  justify-content:space-around;
+  background-color:#A59E8C;
+  padding:8px ;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  word-spacing: 50px;
+
+}
+
+:root {
+  scroll-padding-top: 3rem;
+}
+
+nav a{
+  padding: 1px 16px;
+  text-decoration: none;
+  display: inline-block;
+  color:white;
+  font-size: 20px;
+}
+
+nav a:hover {
+  background: #93A8AC;
+}
+
+section{
+  padding-top: 60px;
+}
+
+.ps {
+  margin-bottom: 10px; 
+  height: 250px;
+}
+
+.cs {
+  margin-top: -10px; 
+  height: 250px;
+}
+
+main{
+  padding: 20px;
+  padding-top: 20px;
+  margin-bottom: 500px;
+}
+
+article{
+  float: left;
+  width:25%
+}
+
+.title{
+  text-align: left;
+  -webkit-text-stroke: 1.5px #37392E;
+  text-stroke: 1.5px #37392E;
+}
+
+.me{
+  padding: 20px;
+  margin: 10px;
+  background-color: #A59E8C;
+  align-items: center;
+  width: 392%;
+  height: 200%;
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border-radius: 50px;
+}
+
+/* 滑鼠移至照片時，照片會放大 */
+@keyframes zoom {
+  from {transform: scale(0.1)}
+  to {transform: scale(1)}
+}
+
+.me_photo .circle
+{
+  border-radius: 50%;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  transition:all 0.2s linear;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+    
+}
+
+.me_photo .circle:hover{
+  transform: scale(1.2);
+  transition: all 0.2s linear;
+}
+
+.me_contact{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.conttact{
+  width: 30px;
+  height: auto;
+  margin: 0 5px;
+}
+
+.me_intro{
+  padding-left: 50px;
+  text-align: center;
+}
+
+
+.me h2{
+    color:#3E3D39;
+    padding: 5px 10px;
+}
+
+.me p{
+    font-family: Times ;
+    font-size: 20px;
+
+}
+
+.slogan_image{
+  padding-top: 20px;
+  padding-left: 50px;
+  width: 800px;
+  height: auto;
+}
+
+.skill{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20PX;
+}
+
+
+.jinen *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: consolas;
+}
+.jinen body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden
+}
+.jinen {
+  position: relative;
+  width: 240px;
+  height: 250px;
+  display:flex;
+  justify-content: space-between;
+  margin-right:20px
+}
+
+.jinen .percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  ;
+}
+
+.jinen .percent::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 20px;
+  background: #555;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.4em;
+  text-transform: uppercase;
+}
+
+.jinen svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(270deg);
+}
+
+.jinen svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 3;
+  stroke: rgba(0, 0, 0, 0.05);
+  transform: translate(5px, 5px);
+}
+
+.jinen svg circle:nth-child(2) {
+  stroke: #555;
+  stroke-dasharray: 440;
+  stroke-dashoffset: calc(440 - (440 * var(--num))/ 100);
+  opacity: 0;
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2.5s;
+}
+
+/*技能熟練度進度條動畫*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.jinen .dot {
+  position: absolute;
+  inset: 5px;
+  z-index: 10;
+  animation: animateDot 2s linear forwards;
+}
+
+@keyframes animateDot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(calc(3.6deg * var(--num)));
+  }
+}
+
+.jinen .dot::before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  top: -7px;
+  left: 50%;
+  background-color: #555;
+  transform: translateX(-50%);
+}
+
+.jinen .number {
+  opacity: 0;
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2.5s;
+}
+
+.jinen .number h2 {
+  font-size: 2.5em;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jinen .number h2 span {
+  font-weight: 300;
+  font-size: 0.5em;
+  margin-left: 5px;
+}
+
+.lunbo{
+  padding: 0 10px
+}
+
+.lunbo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  margin-bottom: 20px; 
+  width: 50%;
+}
+
+.lunbo body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.lunbo-row{
+  display: flex;
+}
+
+.slides {
+  position: relative;
+}
+
+.slides h4 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  outline: 2px solid black; 
+}
+ 
+ul.slides {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+  overflow: hidden;
+}
+  
+li.slide {
+  margin: 0;
+  padding: 0;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica;
+  font-size: 120px;
+  color: #fff;
+  transition: .5s transform ease-in-out;
+  background-size: cover;
+}
+  
+.slide:nth-of-type(1) {
+  background-image: url("image/資識王1.jpg");
+}
+
+.slide:nth-of-type(2) {
+    background-image: url("image/資識王2.png");
+  left: 100%;
+}
+
+.slide:nth-of-type(3) {
+    background-image: url("image/資識王3.png");
+  left: 200%;
+}
+
+.slide:nth-of-type(4) {
+  background-image: url("image/食字路口1.jpg");
+}
+
+.slide:nth-of-type(5) {
+    background-image: url("image/食字路口2.jpg");
+  left: 100%;
+}
+  
+.slide:nth-of-type(6) {
+    background-image: url("image/食字路口3.jpg");
+  left: 200%;
+}
+
+.slide:nth-of-type(7) {
+  background-image: url("image/資夜1.jpg");
+}
+
+.slide:nth-of-type(8) {
+    background-image: url("image/資夜2.jpg");
+  left: 100%;
+}
+
+.slide:nth-of-type(9) {
+    background-image: url("image/資夜3.jpg");
+  left: 200%;
+}
+.slide:nth-of-type(10) {
+  background-image: url("image/北聯1.jpg");
+}
+
+.slide:nth-of-type(11) {
+    background-image: url("image/北聯2.jpg");
+  left: 100%;
+}
+  
+.slide:nth-of-type(11) {
+    background-image: url("image/北聯3.jpg");
+  left: 200%;
+}
+  
+input[type="radio"] {
+  position: relative;
+  z-index: 100;
+  display: none;
+}
+
+.controls-visible {
+  position: absolute;
+  width: 100%;
+  bottom: 12px;
+  text-align: center;
+}
+  
+.controls-visible label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 3px;
+  border: 2px solid #fff;
+}
+
+.slides input[type="radio"]:nth-of-type(1):checked ~ .controls-visible label:nth-of-type(1) {
+  background-color: #333;
+}
+
+.slides input[type="radio"]:nth-of-type(2):checked ~ .controls-visible label:nth-of-type(2) {
+  background-color: #333;
+}
+
+.slides input[type="radio"]:nth-of-type(3):checked ~ .controls-visible label:nth-of-type(3) {
+  background-color: #333;
+}
+
+.slides input[type="radio"]:nth-of-type(1):checked ~ .slide {
+  transform: translatex(0%);
+}
+  
+.slides input[type="radio"]:nth-of-type(2):checked ~ .slide {
+  transform: translatex(-100%);
+}
+
+.slides input[type="radio"]:nth-of-type(3):checked ~ .slide {
+  transform: translatex(-200%);
+}
+  
+.navigator {
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  width: 100%;
+  z-index: 100;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  display: flex;
+}
+  
+.navigator i {
+  font-size: 32px;
+  color:#333;
+}
+
+.slides input[type="radio"]:nth-of-type(1):checked ~ .navigator:nth-of-type(1) {
+  display: flex;
+}
+
+.slides input[type="radio"]:nth-of-type(2):checked ~ .navigator:nth-of-type(2) {
+  display: flex;
+}
+
+.slides input[type="radio"]:nth-of-type(3):checked ~ .navigator:nth-of-type(3) {
+  display: flex;
+}
+
+table{
+  margin: 0 auto;
+  border-collapse: collapse; 
+  padding: 10px;
+  background-color:#A59E8C ;
+  align-items: center;
+  margin:auto;
+  position: relative;
+  width: 115%;
+  border-radius: 50px;
+}
+
+th, td {
+  border: 5px ;
+  padding: 10px; 
+}
+
+.center-slides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center1{
+  margin-left: auto;margin-right: auto;
+}
+
+
+/*手風琴影片展示*/
+.pp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #A59E8C(243, 230, 241);
+  width: 392%;
+  height: 20%;
+  margin-bottom: 5000px;
+}
+
+.shell{
+  width: 90%;
+  height: 400px;
+  display: flex;
+}
+
+.box{
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin: 0 20px;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, .5);
+  border-radius: 20px;
+  border: 10px solid #A59E8C;
+  background-color: #A59E8C;
+}
+
+.box>video{
+  width: 200%;
+  height: 85%;
+  object-fit: cover;
+  transition: .5s;
+}
+
+.box>span{
+  font-weight: 500;
+  font-size: medium;
+  text-align: center;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box:hover{
+  flex-basis: 40%;
+}
+
+.box:hover>video{
+  width: 100%;
+  height: 100%;
+}
+
+/*按圖片能夠回到頁首*/
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px; 
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+#backToTopBtn img {
+  width: 80px; 
+  height: auto; 
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  background-color: #A59E8C;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  z-index:1;
+  margin-top: 100px;
+}
+
+
+
+
+
+
+  
+
+
+
